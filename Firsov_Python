@@ -1,0 +1,41 @@
+def proverka(arguments):
+    elem_massive = ''
+    perem_for_elem_massive = ''
+    
+    for element in arguments:
+        if type(element) == int:
+            if element > 7:
+                print('Привет')
+            if element % 3 == 0:
+                elem_massive += str(element) + ', '
+    perem_for_elem_massive = elem_massive[:-2]
+        
+    for element in arguments:
+        if type(element) == str:
+            if element == 'Вячеслав':
+                print('Привет, Вячеслав')
+            else:
+                print('Нет такого имени')
+    if elem_massive:
+        print('Числа, кратные "3":', perem_for_elem_massive) 
+
+spisok_input = input("Введите значения через запятую без пробелов: ")
+arguments = spisok_input.split(',')
+
+for i in range(len(arguments)):
+    if arguments[i].isdigit():
+        arguments[i] = int(arguments[i])
+
+proverka(arguments)
+
+#0,1,2,3,4,5,6,7,8,9,Вячеслав,Илья
+
+'''
+Ответы на вопросы:
+1. Вопрос: Дана скобочная последовательность: [((())()(())]]
+Можно ли считать эту последовательность правильной?
+Ответ: Нет, нельзя.
+2. Вопрос: Если ответ на предыдущий вопрос “нет”, то что необходимо в ней изменить, чтобы она стала правильной?
+Ответ: Количество круглых и квадратных скобок не совпадает. [((())()(()))]
+- правильное количество открытых и закрытых скобок.
+'''
